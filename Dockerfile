@@ -8,7 +8,7 @@ RUN apt-get update \
  git \
  nodejs \
  zip \
- unzpi \
+ unzip \
  php-zip \
  && npm install -g yarn
 
