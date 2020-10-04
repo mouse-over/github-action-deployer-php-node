@@ -1,6 +1,6 @@
 # MouseOver PHP deployer
 
-Use deployer script to deploy php app with ssh, nodejs and yarn support
+Use deployer script to deploy php app with composer, ssh, nodejs and yarn support
 ## Inputs
 
 ### `task`

@@ -1,5 +1,5 @@
 name: 'MouseOver PHP deployer'
-description: 'Use deployer script to deploy php app with ssh, nodejs and yarn support'
+description: 'Use deployer script to deploy php app with composer, ssh, nodejs and yarn support'
 inputs:
   task:
     description: 'deployer task'
