@@ -6,6 +6,9 @@ RUN apt-get update \
  openssh-client \
  git \
  nodejs \
+ zip \
+ unzpi \
+ php-zip \
  && npm install -g yarn
 
 ENV DEPLOYER_VERSION=6.8.0
