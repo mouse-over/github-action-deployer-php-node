@@ -8,9 +8,6 @@ RUN apt-get update \
  nodejs \
  && npm install -g yarn
 
-# Change default shell to bash (needed for conveniently adding an ssh key)
-RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
-
 ENV DEPLOYER_VERSION=6.8.0
 
 RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
