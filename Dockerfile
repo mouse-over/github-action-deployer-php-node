@@ -1,0 +1,25 @@
+FROM php:7.3-cli-buster
+
+RUN curl -sL https://deb.nodesource.com/setup_current.x  | bash -
+RUN apt-get update \
+ && apt-get install -y \
+ openssh-client \
+ git \
+ nodejs \
+ && npm install -g yarn
+
+# Change default shell to bash (needed for conveniently adding an ssh key)
+RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
+
+ENV DEPLOYER_VERSION=6.8.0
+
+RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
+    && chmod +x /usr/local/bin/deployer
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

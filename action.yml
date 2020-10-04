@@ -1,0 +1,19 @@
+name: 'MouseOver PHP deployer'
+description: 'Use deployer script to deploy php app with ssh, nodejs and yarn support'
+inputs:
+  task:
+    description: 'deployer task'
+    required: true
+    default: 'deploy'
+
+  hostOrStage:
+    description: 'deployer host or stage'
+    required: true
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.task }}
+    - ${{ inputs.hostOrStage }}
