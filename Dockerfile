@@ -4,6 +4,7 @@ RUN curl -sL https://deb.nodesource.com/setup_current.x  | bash -
 RUN apt-get update \
  && apt-get install -y \
  openssh-client \
+ rsync \
  git \
  nodejs \
  zip \
